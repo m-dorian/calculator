@@ -17,5 +17,35 @@ body {
     width: 380px; 
     border: 3px solid  black; 
     height: 50px; 
-    align-self: center;
+    align-self: center; 
+    background-color: yellow;
+} 
+
+.buttons { 
+    display: flex;
+} 
+
+.number-buttons { 
+    display: flex; 
+    flex-wrap: wrap;
+    width: 180px; 
+    gap: 15px;
+} 
+
+.number-button { 
+    background-color: darkblue; 
+    color: white; 
+    border: 2px solid black; 
+    height: 30px; 
+    width: 30px; 
+    border-radius: 30px; 
+    padding: 8px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+
+} 
+
+.number-button:active { 
+    border-color: yellow;
 }
