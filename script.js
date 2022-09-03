@@ -1,4 +1,9 @@
 let displayContent;
+let firstNumber; 
+let secondNumber; 
+const firstNumberArray = [];
+const secondNumberArray = [];
+let operator;
 const displayArray = []; 
 const display = document.querySelector('.display'); 
 const numberButtons = document.querySelector('.number-buttons'); 
@@ -86,8 +91,22 @@ operatorButtons.addEventListener('click', function(e){
         case 'slash': 
         displayArray.push(' / '); 
          break; 
+
+        case 'equals': 
+        getOperator(displayArray);
+        console.log(operator);
+        break;
     }
     displayContent = displayArray.join(""); 
-    display.textContent = displayContent;
-})
+    display.textContent = displayContent; 
+    
+   
+}) 
 
+function getOperator(array){ 
+    array.forEach(element => { 
+        if(element === ' + ' || element === ' - ' || element === ' * ' || element === ' / ') { 
+            operator = element;
+        } 
+    return operator
+    })}
