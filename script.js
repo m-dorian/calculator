@@ -94,9 +94,10 @@ operatorButtons.addEventListener('click', function(e){
 
         case 'equals': 
         getOperator(displayArray);
-        splitArray(displayArray);
-        console.log(firstNumberArray);
-        console.log(secondNumberArray);
+        splitArray(displayArray); 
+        getNumbers(firstNumberArray, secondNumberArray);
+        console.log(firstNumber);
+        console.log(secondNumber);
         break;
     }
     displayContent = displayArray.join(""); 
@@ -133,4 +134,12 @@ firstNumberArray = array.slice(0, array.indexOf(operator));
  secondNumberArray = array.slice(array.indexOf(operator) + 1);
 
  return firstNumberArray , secondNumberArray
-}
+} 
+
+function getNumbers(arr1, arr2){ 
+    firstNumber = Number(arr1.join('')); 
+    secondNumber = Number(arr2.join('')); 
+
+    return firstNumber , secondNumber
+} 
+
