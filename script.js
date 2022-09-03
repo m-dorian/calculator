@@ -1,8 +1,8 @@
 let displayContent;
 let firstNumber; 
 let secondNumber; 
-const firstNumberArray = [];
-const secondNumberArray = [];
+let firstNumberArray;
+ let secondNumberArray;
 let operator;
 const displayArray = []; 
 const display = document.querySelector('.display'); 
@@ -94,7 +94,9 @@ operatorButtons.addEventListener('click', function(e){
 
         case 'equals': 
         getOperator(displayArray);
-        console.log(operator);
+        splitArray(displayArray);
+        console.log(firstNumberArray);
+        console.log(secondNumberArray);
         break;
     }
     displayContent = displayArray.join(""); 
@@ -105,8 +107,30 @@ operatorButtons.addEventListener('click', function(e){
 
 function getOperator(array){ 
     array.forEach(element => { 
-        if(element === ' + ' || element === ' - ' || element === ' * ' || element === ' / ') { 
-            operator = element;
-        } 
+        switch(element){ 
+            case ' + ': 
+            operator = ' + '
+            break; 
+
+            case ' - ': 
+            operator = ' - '
+            break;
+
+            case ' * ': 
+            operator = ' * '
+            break;
+
+            case ' / ': 
+            operator = ' / '
+            break;
+        }
     return operator
     })}
+
+function splitArray(array){ 
+
+firstNumberArray = array.slice(0, array.indexOf(operator));
+ secondNumberArray = array.slice(array.indexOf(operator) + 1);
+
+ return firstNumberArray , secondNumberArray
+}
