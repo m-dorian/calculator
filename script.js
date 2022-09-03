@@ -99,6 +99,10 @@ operatorButtons.addEventListener('click', function(e){
         getNumbers(firstNumberArray, secondNumberArray);
         operate(firstNumber, secondNumber); 
         displayResult(result);
+        break; 
+
+        case 'clear': 
+        displayArray.splice(0, displayArray.length); 
         break;
     }
     displayContent = displayArray.join(""); 
