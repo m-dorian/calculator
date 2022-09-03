@@ -4,6 +4,7 @@ let secondNumber;
 let firstNumberArray;
  let secondNumberArray;
 let operator;
+let result;
 const displayArray = []; 
 const display = document.querySelector('.display'); 
 const numberButtons = document.querySelector('.number-buttons'); 
@@ -96,8 +97,8 @@ operatorButtons.addEventListener('click', function(e){
         getOperator(displayArray);
         splitArray(displayArray); 
         getNumbers(firstNumberArray, secondNumberArray);
-        console.log(firstNumber);
-        console.log(secondNumber);
+        operate(firstNumber, secondNumber);
+        console.log(result);
         break;
     }
     displayContent = displayArray.join(""); 
@@ -142,4 +143,25 @@ function getNumbers(arr1, arr2){
 
     return firstNumber , secondNumber
 } 
+
+function operate(n1, n2){ 
+    switch(operator){ 
+        case ' + ': 
+            result = add(n1, n2);
+            break; 
+
+            case ' - ': 
+            result = subtract(n1, n2);
+            break;
+
+            case ' * ': 
+            result = multiply(n1, n2);
+            break;
+
+            case ' / ': 
+            result = divide(n1, n2);
+            break;
+    } 
+    return result
+}
 
