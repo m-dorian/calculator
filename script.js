@@ -97,8 +97,8 @@ operatorButtons.addEventListener('click', function(e){
         getOperator(displayArray);
         splitArray(displayArray); 
         getNumbers(firstNumberArray, secondNumberArray);
-        operate(firstNumber, secondNumber);
-        console.log(result);
+        operate(firstNumber, secondNumber); 
+        displayResult(result);
         break;
     }
     displayContent = displayArray.join(""); 
@@ -163,5 +163,11 @@ function operate(n1, n2){
             break;
     } 
     return result
+}
+
+function displayResult(result){ 
+     displayArray.splice(0, displayArray.length); 
+    displayArray.push(result); 
+    return displayArray
 }
 
